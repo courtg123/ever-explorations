@@ -23,13 +23,39 @@ import {
     Workflow,
     Brain,
     Maximize2,
-    Wand2
+    Wand2,
+    ChevronLeft,
+    ChevronRight
 } from 'lucide-react';
 
 const E1ProjectPage: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
+    const [currentScreenshot, setCurrentScreenshot] = useState(0);
     const location = useLocation();
+
+    const screenshots = [
+        {
+            src: '/images/screenshots/e1-infinite-canvas_cropped.png',
+            title: 'Infinite Canvas Workspace',
+            description: 'Experience true spatial organization with unlimited workspaces. Pan and zoom through your projects, organizing work the way your mind naturally thinks. Each workspace persists exactly as you left it.'
+        },
+        {
+            src: '/images/screenshots/e1-magic-windows_cropped.png',
+            title: 'Magic Windows & Custom Widgets',
+            description: 'Create mini-apps and custom tools that live right in your workspace. Build calculators, timers, data visualizers, or any utility you need. Magic windows are fully interactive components that enhance your workflow.'
+        },
+        {
+            src: '/images/screenshots/e1-main-editor_cropped.png',
+            title: 'Professional Code Editor',
+            description: 'Full IDE capabilities powered by Monaco Editor. Features IntelliSense, syntax highlighting for 20+ languages, multi-cursor editing, and integrated terminal. All the power you expect from a professional development environment.'
+        },
+        {
+            src: '/images/screenshots/e1-multi-tab_cropped.png',
+            title: 'Multi-Tab Interface',
+            description: 'Work with multiple files simultaneously in a familiar tabbed interface. Keep documentation, code, and references open side by side. Each tab maintains its own state and can be positioned anywhere on your infinite canvas.'
+        }
+    ];
 
     useEffect(() => {
         // Handle hash navigation only when there's a hash
@@ -94,6 +120,23 @@ const E1ProjectPage: React.FC = () => {
             clearInterval(sparkleInterval);
         };
     }, []);
+
+    // Auto-rotate screenshots
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentScreenshot((prev) => (prev + 1) % screenshots.length);
+        }, 5000); // Change every 5 seconds
+
+        return () => clearInterval(interval);
+    }, [screenshots.length]);
+
+    const nextScreenshot = () => {
+        setCurrentScreenshot((prev) => (prev + 1) % screenshots.length);
+    };
+
+    const prevScreenshot = () => {
+        setCurrentScreenshot((prev) => (prev - 1 + screenshots.length) % screenshots.length);
+    };
 
     const features = [
         {
@@ -232,22 +275,48 @@ const E1ProjectPage: React.FC = () => {
                         <p className="section-subtitle">Experience the power of infinite workspaces</p>
                     </div>
                     
-                    <div className="main-screenshot">
-                        <img src="/images/screenshots/e1-infinite-canvas_cropped.png" alt="e.1 Infinite Canvas" />
-                    </div>
-                    
-                    <div className="screenshots-grid">
-                        <div className="screenshot-item">
-                            <img src="/images/screenshots/e1-main-editor_cropped.png" alt="e.1 Main Editor Interface" />
-                            <p className="screenshot-caption">Main Editor Interface</p>
+                    <div className="screenshot-carousel">
+                        <div className="carousel-main">
+                            <button 
+                                className="carousel-control carousel-control-prev"
+                                onClick={prevScreenshot}
+                                aria-label="Previous screenshot"
+                            >
+                                <ChevronLeft size={32} />
+                            </button>
+                            
+                            <div className="carousel-content">
+                                <div className="carousel-image-container">
+                                    <img 
+                                        src={screenshots[currentScreenshot].src} 
+                                        alt={screenshots[currentScreenshot].title}
+                                        className="carousel-image"
+                                    />
+                                </div>
+                                <div className="carousel-description">
+                                    <h3 className="carousel-title">{screenshots[currentScreenshot].title}</h3>
+                                    <p className="carousel-text">{screenshots[currentScreenshot].description}</p>
+                                </div>
+                            </div>
+                            
+                            <button 
+                                className="carousel-control carousel-control-next"
+                                onClick={nextScreenshot}
+                                aria-label="Next screenshot"
+                            >
+                                <ChevronRight size={32} />
+                            </button>
                         </div>
-                        <div className="screenshot-item">
-                            <img src="/images/screenshots/e1-magic-windows_cropped.png" alt="e.1 Magic Windows" />
-                            <p className="screenshot-caption">Magic Windows & Widgets</p>
-                        </div>
-                        <div className="screenshot-item">
-                            <img src="/images/screenshots/e1-multi-tab_cropped.png" alt="e.1 Multi-tab Interface" />
-                            <p className="screenshot-caption">Multi-Tab Interface</p>
+                        
+                        <div className="carousel-indicators">
+                            {screenshots.map((_, index) => (
+                                <button
+                                    key={index}
+                                    className={`carousel-indicator ${index === currentScreenshot ? 'active' : ''}`}
+                                    onClick={() => setCurrentScreenshot(index)}
+                                    aria-label={`Go to screenshot ${index + 1}`}
+                                />
+                            ))}
                         </div>
                     </div>
                 </div>
