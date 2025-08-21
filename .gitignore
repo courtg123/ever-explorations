@@ -32,8 +32,8 @@ yarn-error.log
 *.sw?
 
 # Old static files (keeping for reference)
-evere1_macos.png
-planets.png
-starrybg.png
-styles.css
-index.html
+/evere1_macos.png
+/planets.png
+/starrybg.png
+/styles.css
+/index.html
