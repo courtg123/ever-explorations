@@ -5,8 +5,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\ProjectController;
 use App\Http\Controllers\Api\ChangelogController;
 use App\Http\Controllers\Api\EmailSubscriberController;
+use App\Http\Controllers\Api\ContactMessageController;
 
 Route::get('/projects', [ProjectController::class, 'index']);
 Route::get('/projects/{id}', [ProjectController::class, 'show']);
 Route::get('/changelogs', [ChangelogController::class, 'index']);
 Route::post('/email-subscribe', [EmailSubscriberController::class, 'subscribe']);
+Route::post('/contact', [ContactMessageController::class, 'store']);

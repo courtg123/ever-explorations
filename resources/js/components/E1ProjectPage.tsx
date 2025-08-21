@@ -18,6 +18,7 @@ import {
     ClipboardPen,
     Globe,
     StickyNote,
+    Mail,
     BarChart3,
     Workflow,
     Brain,
@@ -320,7 +321,21 @@ const E1ProjectPage: React.FC = () => {
                             >
                                 Coming Soon
                             </button>
-                            <p className="file-size">Sign up for updates</p>
+                            <button 
+                                onClick={() => setIsModalOpen(true)}
+                                className="btn btn-link"
+                                style={{ 
+                                    marginTop: '8px', 
+                                    color: '#a78bfa', 
+                                    fontSize: '0.9rem',
+                                    background: 'none',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    textDecoration: 'underline'
+                                }}
+                            >
+                                Get notified →
+                            </button>
                         </div>
                         
                         <div className="download-card glass-card disabled">
@@ -329,9 +344,23 @@ const E1ProjectPage: React.FC = () => {
                             <p className="version-info">Coming Soon</p>
                             <p className="requirements">Windows 10 or later</p>
                             <button className="btn btn-secondary download-button" disabled>
-                                Not Available
+                                Coming Soon
                             </button>
-                            <p className="file-size">Sign up for updates</p>
+                            <button 
+                                onClick={() => setIsModalOpen(true)}
+                                className="btn btn-link"
+                                style={{ 
+                                    marginTop: '8px', 
+                                    color: '#a78bfa', 
+                                    fontSize: '0.9rem',
+                                    background: 'none',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    textDecoration: 'underline'
+                                }}
+                            >
+                                Get notified →
+                            </button>
                         </div>
                         
                         <div className="download-card glass-card disabled">
@@ -340,10 +369,49 @@ const E1ProjectPage: React.FC = () => {
                             <p className="version-info">Coming Soon</p>
                             <p className="requirements">Ubuntu 20.04+ / Similar</p>
                             <button className="btn btn-secondary download-button" disabled>
-                                Not Available
+                                Coming Soon
                             </button>
-                            <p className="file-size">Sign up for updates</p>
+                            <button 
+                                onClick={() => setIsModalOpen(true)}
+                                className="btn btn-link"
+                                style={{ 
+                                    marginTop: '8px', 
+                                    color: '#a78bfa', 
+                                    fontSize: '0.9rem',
+                                    background: 'none',
+                                    border: 'none',
+                                    cursor: 'pointer',
+                                    textDecoration: 'underline'
+                                }}
+                            >
+                                Get notified →
+                            </button>
                         </div>
+                    </div>
+                    
+                    {/* Email Signup CTA */}
+                    <div className="download-cta glass-card" style={{ 
+                        marginTop: '3rem', 
+                        padding: '2rem', 
+                        textAlign: 'center',
+                        background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(167, 139, 250, 0.05))'
+                    }}>
+                        <h3 style={{ marginBottom: '1rem' }}>Be the First to Know</h3>
+                        <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>
+                            Join our mailing list to get notified when e.1 becomes available for your platform.
+                            We'll also send you exclusive updates about new features and beta access.
+                        </p>
+                        <button 
+                            onClick={() => setIsModalOpen(true)}
+                            className="btn btn-primary"
+                            style={{ 
+                                background: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
+                                border: 'none'
+                            }}
+                        >
+                            <Mail size={18} style={{ marginRight: '8px' }} />
+                            Subscribe for Updates
+                        </button>
                     </div>
                 </div>
             </section>

@@ -6,6 +6,12 @@ import { Project } from '../types';
 const HomePage: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
     const [scrolled, setScrolled] = useState(false);
+    const [contactForm, setContactForm] = useState({ name: '', email: '', message: '' });
+    const [newsletterEmail, setNewsletterEmail] = useState('');
+    const [contactSubmitting, setContactSubmitting] = useState(false);
+    const [newsletterSubmitting, setNewsletterSubmitting] = useState(false);
+    const [contactMessage, setContactMessage] = useState('');
+    const [newsletterMessage, setNewsletterMessage] = useState('');
 
     useEffect(() => {
         // Fetch projects from API
@@ -68,6 +74,45 @@ const HomePage: React.FC = () => {
             clearInterval(sparkleInterval);
         };
     }, []);
+
+    const handleContactSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setContactSubmitting(true);
+        setContactMessage('');
+        
+        try {
+            const response = await axios.post('/api/contact', contactForm);
+            if (response.data.success) {
+                setContactMessage('Thank you! Your message has been sent.');
+                setContactForm({ name: '', email: '', message: '' });
+            }
+        } catch (error) {
+            setContactMessage('Sorry, there was an error. Please try again.');
+        } finally {
+            setContactSubmitting(false);
+        }
+    };
+
+    const handleNewsletterSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        setNewsletterSubmitting(true);
+        setNewsletterMessage('');
+        
+        try {
+            const response = await axios.post('/api/email-subscribe', { 
+                email: newsletterEmail,
+                subscribed_to_newsletter: true
+            });
+            if (response.data.success) {
+                setNewsletterMessage('Thank you for subscribing!');
+                setNewsletterEmail('');
+            }
+        } catch (error) {
+            setNewsletterMessage('Sorry, there was an error. Please try again.');
+        } finally {
+            setNewsletterSubmitting(false);
+        }
+    };
 
     return (
         <>
@@ -275,41 +320,67 @@ const HomePage: React.FC = () => {
                         <div className="mailing-list-card glass-card">
                             <h3>Stay Updated</h3>
                             <p>Join the mailing list to get updates on new experiments and features.</p>
-                            <form className="mailing-list-form" onSubmit={(e) => e.preventDefault()}>
+                            <form className="mailing-list-form" onSubmit={handleNewsletterSubmit}>
                                 <input 
                                     type="email" 
                                     placeholder="your@email.com" 
                                     className="email-input"
+                                    value={newsletterEmail}
+                                    onChange={(e) => setNewsletterEmail(e.target.value)}
                                     required
+                                    disabled={newsletterSubmitting}
                                 />
-                                <button type="submit" className="btn btn-primary">Subscribe</button>
+                                <button type="submit" className="btn btn-primary" disabled={newsletterSubmitting}>
+                                    {newsletterSubmitting ? 'Subscribing...' : 'Subscribe'}
+                                </button>
                             </form>
+                            {newsletterMessage && (
+                                <p style={{ marginTop: '10px', color: newsletterMessage.includes('Thank') ? '#10b981' : '#ef4444', fontSize: '0.9rem' }}>
+                                    {newsletterMessage}
+                                </p>
+                            )}
                         </div>
                         
                         <div className="contact-card glass-card">
                             <h3>Get in Touch</h3>
                             <p>Have questions or ideas? I'd love to hear from you.</p>
-                            <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                            <form className="contact-form" onSubmit={handleContactSubmit}>
                                 <input 
                                     type="text" 
                                     placeholder="Your Name" 
                                     className="form-input"
+                                    value={contactForm.name}
+                                    onChange={(e) => setContactForm({...contactForm, name: e.target.value})}
                                     required
+                                    disabled={contactSubmitting}
                                 />
                                 <input 
                                     type="email" 
                                     placeholder="your@email.com" 
                                     className="form-input"
+                                    value={contactForm.email}
+                                    onChange={(e) => setContactForm({...contactForm, email: e.target.value})}
                                     required
+                                    disabled={contactSubmitting}
                                 />
                                 <textarea 
                                     placeholder="Your message..." 
                                     className="form-textarea"
                                     rows={4}
+                                    value={contactForm.message}
+                                    onChange={(e) => setContactForm({...contactForm, message: e.target.value})}
                                     required
+                                    disabled={contactSubmitting}
                                 ></textarea>
-                                <button type="submit" className="btn btn-primary">Send Message</button>
+                                <button type="submit" className="btn btn-primary" disabled={contactSubmitting}>
+                                    {contactSubmitting ? 'Sending...' : 'Send Message'}
+                                </button>
                             </form>
+                            {contactMessage && (
+                                <p style={{ marginTop: '10px', color: contactMessage.includes('Thank') ? '#10b981' : '#ef4444', fontSize: '0.9rem' }}>
+                                    {contactMessage}
+                                </p>
+                            )}
                         </div>
                     </div>
                 </div>
