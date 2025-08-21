@@ -58,6 +58,29 @@ body {
     opacity: 1;
 }
 
+/* Gradient overlay for smooth transition */
+.hero-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0.4) 30%,
+        rgba(0, 0, 0, 0.8) 70%,
+        var(--void-black) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+/* Ensure hero content is above the gradient */
+.hero-container {
+    position: relative;
+    z-index: 2;
+}
+
 /* Footer subtle starfield */
 .main-footer .starfield-container {
     opacity: 0.3;
@@ -1081,10 +1104,28 @@ body {
     overflow: hidden;
 }
 
+/* Footer gradient overlay for smooth transition */
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    background: linear-gradient(to top, 
+        transparent 0%, 
+        rgba(0, 0, 0, 0.7) 50%,
+        var(--void-black) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+
 .footer-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 40px;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-content {
