@@ -116,11 +116,6 @@ const HomePage: React.FC = () => {
 
     return (
         <>
-            {/* Starfield Background */}
-            <div className="starfield-container">
-                <div className="starfield-static"></div>
-            </div>
-
             {/* Header Navigation */}
             <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
                 <nav className="nav-container">
@@ -187,6 +182,10 @@ const HomePage: React.FC = () => {
 
             {/* Hero Section */}
             <section className="hero-section">
+                {/* Starfield Background */}
+                <div className="starfield-container">
+                    <div className="starfield-static"></div>
+                </div>
                 <div className="hero-container">
                     <div className="hero-content">
                         <div className="hero-text">
@@ -388,6 +387,10 @@ const HomePage: React.FC = () => {
 
             {/* Footer */}
             <footer className="main-footer">
+                {/* Subtle starfield for footer */}
+                <div className="starfield-container">
+                    <div className="starfield-static"></div>
+                </div>
                 <div className="footer-container">
                     <div className="footer-content">
                         <p>&copy; 2024 Ever Explorations. Built with curiosity.</p>

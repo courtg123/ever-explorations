@@ -188,11 +188,6 @@ const E1ProjectPage: React.FC = () => {
 
     return (
         <>
-            {/* Starfield Background */}
-            <div className="starfield-container">
-                <div className="starfield-static"></div>
-            </div>
-
             {/* Header Navigation */}
             <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
                 <nav className="nav-container">
@@ -227,6 +222,10 @@ const E1ProjectPage: React.FC = () => {
 
             {/* Hero Section */}
             <section className="hero-section project-hero">
+                {/* Starfield Background */}
+                <div className="starfield-container">
+                    <div className="starfield-static"></div>
+                </div>
                 <div className="hero-container">
                     <Link to="/" className="back-button">
                         <ArrowLeft size={20} />
@@ -533,6 +532,10 @@ const E1ProjectPage: React.FC = () => {
 
             {/* Footer */}
             <footer className="main-footer">
+                {/* Subtle starfield for footer */}
+                <div className="starfield-container">
+                    <div className="starfield-static"></div>
+                </div>
                 <div className="footer-container">
                     <div className="footer-content">
                         <p>&copy; 2024 Ever Explorations. Built with curiosity.</p>
