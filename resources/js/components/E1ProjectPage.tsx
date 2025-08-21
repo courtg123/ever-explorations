@@ -390,8 +390,8 @@ const E1ProjectPage: React.FC = () => {
                             >
                                 Coming Soon
                             </button>
-                            <button 
-                                onClick={() => setIsModalOpen(true)}
+                            <Link 
+                                to="/#contact"
                                 className="btn btn-link"
                                 style={{ 
                                     marginTop: '8px', 
@@ -400,11 +400,12 @@ const E1ProjectPage: React.FC = () => {
                                     background: 'none',
                                     border: 'none',
                                     cursor: 'pointer',
-                                    textDecoration: 'underline'
+                                    textDecoration: 'underline',
+                                    display: 'inline-block'
                                 }}
                             >
                                 Get notified →
-                            </button>
+                            </Link>
                         </div>
                         
                         <div className="download-card glass-card disabled">
@@ -415,8 +416,8 @@ const E1ProjectPage: React.FC = () => {
                             <button className="btn btn-secondary download-button" disabled>
                                 Coming Soon
                             </button>
-                            <button 
-                                onClick={() => setIsModalOpen(true)}
+                            <Link 
+                                to="/#contact"
                                 className="btn btn-link"
                                 style={{ 
                                     marginTop: '8px', 
@@ -425,11 +426,12 @@ const E1ProjectPage: React.FC = () => {
                                     background: 'none',
                                     border: 'none',
                                     cursor: 'pointer',
-                                    textDecoration: 'underline'
+                                    textDecoration: 'underline',
+                                    display: 'inline-block'
                                 }}
                             >
                                 Get notified →
-                            </button>
+                            </Link>
                         </div>
                         
                         <div className="download-card glass-card disabled">
@@ -440,8 +442,8 @@ const E1ProjectPage: React.FC = () => {
                             <button className="btn btn-secondary download-button" disabled>
                                 Coming Soon
                             </button>
-                            <button 
-                                onClick={() => setIsModalOpen(true)}
+                            <Link 
+                                to="/#contact"
                                 className="btn btn-link"
                                 style={{ 
                                     marginTop: '8px', 
@@ -450,11 +452,12 @@ const E1ProjectPage: React.FC = () => {
                                     background: 'none',
                                     border: 'none',
                                     cursor: 'pointer',
-                                    textDecoration: 'underline'
+                                    textDecoration: 'underline',
+                                    display: 'inline-block'
                                 }}
                             >
                                 Get notified →
-                            </button>
+                            </Link>
                         </div>
                     </div>
                     
@@ -470,17 +473,20 @@ const E1ProjectPage: React.FC = () => {
                             Join our mailing list to get notified when e.1 becomes available for your platform.
                             We'll also send you exclusive updates about new features and beta access.
                         </p>
-                        <button 
-                            onClick={() => setIsModalOpen(true)}
+                        <Link 
+                            to="/#contact"
                             className="btn btn-primary"
                             style={{ 
                                 background: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
-                                border: 'none'
+                                border: 'none',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                textDecoration: 'none'
                             }}
                         >
                             <Mail size={18} style={{ marginRight: '8px' }} />
                             Subscribe for Updates
-                        </button>
+                        </Link>
                     </div>
                 </div>
             </section>
