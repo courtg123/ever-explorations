@@ -264,7 +264,7 @@ const E1ProjectPage: React.FC = () => {
                                 <span className="status-badge badge-version">v1.0.0</span>
                             </div>
                             <p className="hero-description">
-                                Ever e.1 is more than an IDE—it's an infinite canvas workspace where code, ideas, and creativity converge. 
+                                The first official experiment I'm excited to share with you. Ever e.1 is more than an IDE, it's an infinite canvas workspace where code, ideas, and creativity converge. 
                                 Imagine having unlimited tables where you can spread out all your work, pick up any piece to focus on it, 
                                 then place it back. With persistent sessions, magic windows, integrated AI, and spatial organization, 
                                 e.1 transforms how you think about digital workspaces.
