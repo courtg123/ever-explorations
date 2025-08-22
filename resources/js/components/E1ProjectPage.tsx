@@ -341,6 +341,18 @@ const E1ProjectPage: React.FC = () => {
                         </div>
                     </div>
                 </div>
+                
+                <div className="screenshot-stage">
+                    <div className="screenshot-parallax-container left coming">
+                        <div className="screenshot-parallax">
+                            <img src="/images/screenshots/e1-integrated-browser_cropped.png" alt="e.1 Integrated Browser" />
+                        </div>
+                        <div className="screenshot-description">
+                            <h3>Integrated Browser</h3>
+                            <p>Browse the web without leaving your workspace. Keep reference materials, documentation, and research right alongside your work.</p>
+                        </div>
+                    </div>
+                </div>
             </section>
 
             {/* Features Section */}
