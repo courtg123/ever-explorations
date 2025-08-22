@@ -198,7 +198,7 @@ const HomePage: React.FC = () => {
                             <Link to="/project/e1" className="hero-announcement" style={{ textDecoration: 'none', color: 'inherit' }}>
                                 <span className="announcement-badge">NEW</span>
                                 <p className="announcement-text">
-                                    Ever e.1 - Professional code editor coming soon
+                                    Ever e.1 - A new digital workspace app coming soon
                                 </p>
                             </Link>
                             <div className="hero-actions">
