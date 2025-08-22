@@ -14,7 +14,7 @@ class ProjectsSeeder extends Seeder
     public function run(): void
     {
         // e.1 - Featured Project (Currently the only public project)
-        Project::firstOrCreate(
+        Project::updateOrCreate(
             ['name' => 'Ever e.1'],
             [
                 'description' => 'The first official experiment I\'m excited to share with you. Your infinite digital workspace where code, ideas, and creativity converge. More than an IDE, e.1 features an infinite canvas, magic windows, persistent sessions, integrated browser, whiteboards, and AI integration. Spread your work across unlimited spaces and return exactly where you left off.',
