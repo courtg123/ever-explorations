@@ -1,44 +1,63 @@
 .screenshots-parallax-section {
     position: relative;
-    min-height: 300vh;
     overflow: hidden;
-    padding: 150px 0;
+    padding: 100px 0;
+}
+
+.screenshot-stage {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
 }
 
 .screenshot-parallax-container {
-    position: absolute;
-    width: 75%;
-    max-width: 1200px;
+    position: sticky;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 90%;
+    max-width: 1400px;
     display: flex;
     align-items: center;
-    gap: 40px;
+    gap: 60px;
+    z-index: 1;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .screenshot-parallax {
-    flex: 1;
-    transition: transform 0.1s ease-out, opacity 0.3s ease-out;
-    will-change: transform;
-    filter: drop-shadow(0 30px 80px rgba(0, 0, 0, 0.4));
+    flex: 1.2;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform, opacity;
+    filter: drop-shadow(0 40px 100px rgba(0, 0, 0, 0.5));
+    transform-origin: center center;
 }
 
 .screenshot-parallax img {
     width: 100%;
     height: auto;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    object-fit: cover;
 }
 
 .screenshot-description {
-    flex: 0 0 35%;
-    padding: 30px;
+    flex: 0 0 40%;
+    padding: 40px;
     opacity: 0;
-    transition: opacity 0.6s ease-out;
-    transform: translateX(0);
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.screenshot-description.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .screenshot-description h3 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -46,18 +65,16 @@
 }
 
 .screenshot-description p {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.7);
-    line-height: 1.6;
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.8;
 }
 
 .screenshot-parallax-container.left {
-    left: -10%;
     flex-direction: row-reverse;
 }
 
 .screenshot-parallax-container.right {
-    right: -10%;
     flex-direction: row;
 }
 
@@ -65,24 +82,33 @@
     text-align: right;
 }
 
-.screenshot-parallax[data-speed] {
-    transition: none;
+/* Initial state - screenshots start off-screen */
+.screenshot-parallax-container.left .screenshot-parallax {
+    transform: translateX(-100%) scale(0.8) rotateY(25deg);
+    opacity: 0;
 }
 
-.screenshot-parallax-container.screenshot-1 {
-    top: 10%;
+.screenshot-parallax-container.right .screenshot-parallax {
+    transform: translateX(100%) scale(0.8) rotateY(-25deg);
+    opacity: 0;
 }
 
-.screenshot-parallax-container.screenshot-2 {
-    top: 35%;
+/* In focus state */
+.screenshot-parallax-container.in-focus .screenshot-parallax {
+    transform: translateX(0) scale(1) rotateY(0deg) !important;
+    opacity: 1;
 }
 
-.screenshot-parallax-container.screenshot-3 {
-    top: 60%;
+/* Passed state - screenshots move up and fade */
+.screenshot-parallax-container.passed .screenshot-parallax {
+    transform: translateY(-50%) scale(0.9) !important;
+    opacity: 0.3;
 }
 
-.screenshot-parallax-container.screenshot-4 {
-    top: 85%;
+/* Coming state - screenshots are waiting below */
+.screenshot-parallax-container.coming .screenshot-parallax {
+    transform: translateY(50%) scale(0.9) !important;
+    opacity: 0.3;
 }
 
 .screenshot-parallax.in-view {

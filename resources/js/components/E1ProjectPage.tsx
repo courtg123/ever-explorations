@@ -76,45 +76,40 @@ const E1ProjectPage: React.FC = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
             
-            // Parallax effect for screenshot containers
-            const containers = document.querySelectorAll('.screenshot-parallax-container');
-            containers.forEach((container: Element) => {
-                const screenshot = container.querySelector('.screenshot-parallax') as HTMLElement;
-                const description = container.querySelector('.screenshot-description') as HTMLElement;
-                if (!screenshot) return;
+            // Staged parallax effect for screenshot containers
+            const stages = document.querySelectorAll('.screenshot-stage');
+            stages.forEach((stage: Element) => {
+                const container = stage.querySelector('.screenshot-parallax-container') as HTMLElement;
+                const description = stage.querySelector('.screenshot-description') as HTMLElement;
+                if (!container) return;
                 
-                const rect = container.getBoundingClientRect();
-                const speed = parseFloat(screenshot.getAttribute('data-speed') || '0.5');
-                const yPos = -(window.scrollY * speed);
-                const isLeft = container.classList.contains('left');
-                const rotation = isLeft ? 12 : -12;
-                
-                // Calculate distance from viewport center
+                const rect = stage.getBoundingClientRect();
+                const stageCenter = rect.top + rect.height / 2;
                 const viewportCenter = window.innerHeight / 2;
-                const elementCenter = rect.top + rect.height / 2;
-                const distance = Math.abs(viewportCenter - elementCenter);
-                const maxDistance = window.innerHeight * 0.7;
+                const distance = stageCenter - viewportCenter;
                 
-                // Scale based on distance - bigger when centered, smaller when away
-                const normalizedDistance = Math.min(distance / maxDistance, 1);
-                const scale = 1.1 - (normalizedDistance * 0.35);
+                // Remove all state classes
+                container.classList.remove('in-focus', 'passed', 'coming');
                 
-                // Calculate tilt based on scroll position
-                const tilt = rotation * (1 - normalizedDistance * 0.5);
-                
-                // Apply transform to screenshot
-                screenshot.style.transform = 
-                    `translateY(${yPos}px) perspective(1200px) rotateY(${tilt}deg) scale(${scale})`;
-                
-                // Fade in/out description based on distance
-                if (description) {
-                    const opacity = Math.max(0, 1 - normalizedDistance * 1.5);
-                    description.style.opacity = opacity.toString();
-                }
-                
-                // Add in-view class for initial animation
-                if (rect.top < window.innerHeight && rect.bottom > 0) {
-                    screenshot.classList.add('in-view');
+                // Determine state based on position
+                if (Math.abs(distance) < window.innerHeight * 0.3) {
+                    // This screenshot is in focus
+                    container.classList.add('in-focus');
+                    if (description) {
+                        description.classList.add('visible');
+                    }
+                } else if (distance < 0) {
+                    // This screenshot has been passed
+                    container.classList.add('passed');
+                    if (description) {
+                        description.classList.remove('visible');
+                    }
+                } else {
+                    // This screenshot is coming up
+                    container.classList.add('coming');
+                    if (description) {
+                        description.classList.remove('visible');
+                    }
                 }
             });
         };
@@ -292,50 +287,58 @@ const E1ProjectPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Screenshots Section with Parallax */}
+            {/* Screenshots Section with Staged Parallax */}
             <section className="screenshots-parallax-section">
                 <div className="parallax-content">
                     <h2>Reimagine Your Workflow</h2>
                     <p>Everything you need in one infinite, intelligent workspace</p>
                 </div>
                 
-                <div className="screenshot-parallax-container screenshot-1 left">
-                    <div className="screenshot-parallax" data-speed="0.3">
-                        <img src="/images/screenshots/e1-infinite-canvas_cropped.png" alt="e.1 Infinite Canvas" />
-                    </div>
-                    <div className="screenshot-description">
-                        <h3>Infinite Canvas</h3>
-                        <p>Spread your work across unlimited workspaces. Like having infinite tables where you can pick up, work on, and place back any piece of your project.</p>
-                    </div>
-                </div>
-                
-                <div className="screenshot-parallax-container screenshot-2 right">
-                    <div className="screenshot-parallax" data-speed="0.5">
-                        <img src="/images/screenshots/e1-magic-windows_cropped.png" alt="e.1 Magic Windows" />
-                    </div>
-                    <div className="screenshot-description">
-                        <h3>Magic Windows</h3>
-                        <p>Create mini apps and widgets for your projects. Custom tools and utilities that live right in your workspace.</p>
+                <div className="screenshot-stage">
+                    <div className="screenshot-parallax-container left coming">
+                        <div className="screenshot-parallax">
+                            <img src="/images/screenshots/e1-infinite-canvas_cropped.png" alt="e.1 Infinite Canvas" />
+                        </div>
+                        <div className="screenshot-description">
+                            <h3>Infinite Canvas</h3>
+                            <p>Spread your work across unlimited workspaces. Like having infinite tables where you can pick up, work on, and place back any piece of your project.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div className="screenshot-parallax-container screenshot-3 left">
-                    <div className="screenshot-parallax" data-speed="0.4">
-                        <img src="/images/screenshots/e1-main-editor_cropped.png" alt="e.1 Advanced Code Editor" />
-                    </div>
-                    <div className="screenshot-description">
-                        <h3>Advanced Code Editing</h3>
-                        <p>Full IDE capabilities with Monaco Editor at its core, featuring IntelliSense, syntax highlighting, and multi-file editing.</p>
+                <div className="screenshot-stage">
+                    <div className="screenshot-parallax-container right coming">
+                        <div className="screenshot-parallax">
+                            <img src="/images/screenshots/e1-magic-windows_cropped.png" alt="e.1 Magic Windows" />
+                        </div>
+                        <div className="screenshot-description">
+                            <h3>Magic Windows</h3>
+                            <p>Create mini apps and widgets for your projects. Custom tools and utilities that live right in your workspace.</p>
+                        </div>
                     </div>
                 </div>
                 
-                <div className="screenshot-parallax-container screenshot-4 right">
-                    <div className="screenshot-parallax" data-speed="0.6">
-                        <img src="/images/screenshots/e1-multi-tab_cropped.png" alt="e.1 Multi-tab Interface" />
+                <div className="screenshot-stage">
+                    <div className="screenshot-parallax-container left coming">
+                        <div className="screenshot-parallax">
+                            <img src="/images/screenshots/e1-main-editor_cropped.png" alt="e.1 Advanced Code Editor" />
+                        </div>
+                        <div className="screenshot-description">
+                            <h3>Advanced Code Editing</h3>
+                            <p>Full IDE capabilities with Monaco Editor at its core, featuring IntelliSense, syntax highlighting, and multi-file editing.</p>
+                        </div>
                     </div>
-                    <div className="screenshot-description">
-                        <h3>Persistent Sessions</h3>
-                        <p>Switch contexts without losing anything. Every workspace maintains its state, letting you return exactly where you left off.</p>
+                </div>
+                
+                <div className="screenshot-stage">
+                    <div className="screenshot-parallax-container right coming">
+                        <div className="screenshot-parallax">
+                            <img src="/images/screenshots/e1-multi-tab_cropped.png" alt="e.1 Multi-tab Interface" />
+                        </div>
+                        <div className="screenshot-description">
+                            <h3>Persistent Sessions</h3>
+                            <p>Switch contexts without losing anything. Every workspace maintains its state, letting you return exactly where you left off.</p>
+                        </div>
                     </div>
                 </div>
             </section>
