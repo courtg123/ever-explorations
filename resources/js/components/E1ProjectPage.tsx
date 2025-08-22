@@ -355,7 +355,7 @@ const E1ProjectPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Features Section - Flowing List */}
+            {/* Features Section - Compact Grid */}
             <section id="features" className="content-section">
                 <div className="content-container">
                     <div className="section-header">
@@ -363,74 +363,71 @@ const E1ProjectPage: React.FC = () => {
                         <p className="section-subtitle">Powerful tools that transform how you work</p>
                     </div>
                     
-                    <div className="features-flow" style={{
-                        maxWidth: '900px',
+                    <div className="features-compact-grid" style={{
+                        maxWidth: '1200px',
                         margin: '0 auto',
-                        padding: '40px 0'
+                        display: 'grid',
+                        gridTemplateColumns: 'repeat(2, 1fr)',
+                        gap: '30px',
+                        padding: '40px 20px'
                     }}>
                         {features.map((feature, index) => (
-                            <div key={index} className="feature-row" style={{
+                            <div key={index} className="feature-compact" style={{
                                 display: 'flex',
                                 alignItems: 'flex-start',
-                                marginBottom: '50px',
-                                padding: '0 20px',
+                                gap: '20px',
                                 opacity: '0',
-                                animation: `fadeInUp 0.6s ease-out ${index * 0.1}s forwards`
+                                animation: `fadeInUp 0.5s ease-out ${index * 0.05}s forwards`
                             }}>
                                 <div style={{
-                                    flex: '0 0 60px',
-                                    marginRight: '30px',
+                                    flex: '0 0 45px',
+                                    height: '45px',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    height: '60px',
-                                    width: '60px',
-                                    background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(167, 139, 250, 0.1))',
-                                    borderRadius: '16px',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)'
+                                    background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(167, 139, 250, 0.08))',
+                                    borderRadius: '12px',
+                                    border: '1px solid rgba(255, 255, 255, 0.08)'
                                 }}>
-                                    {React.cloneElement(feature.icon, { size: 28 })}
+                                    {React.cloneElement(feature.icon, { size: 22 })}
                                 </div>
                                 <div style={{ flex: 1 }}>
                                     <h3 style={{
-                                        fontSize: '1.5rem',
-                                        marginBottom: '10px',
-                                        background: 'linear-gradient(135deg, #fff 0%, rgba(255,255,255,0.8) 100%)',
-                                        WebkitBackgroundClip: 'text',
-                                        WebkitTextFillColor: 'transparent',
-                                        backgroundClip: 'text'
+                                        fontSize: '1.15rem',
+                                        marginBottom: '6px',
+                                        color: 'rgba(255, 255, 255, 0.95)',
+                                        fontWeight: '600'
                                     }}>{feature.title}</h3>
                                     <p style={{
-                                        fontSize: '1.05rem',
-                                        lineHeight: '1.7',
-                                        color: 'rgba(255, 255, 255, 0.65)',
+                                        fontSize: '0.9rem',
+                                        lineHeight: '1.5',
+                                        color: 'rgba(255, 255, 255, 0.6)',
                                         margin: 0
                                     }}>{feature.description}</p>
-                                    {index < features.length - 1 && (
-                                        <div style={{
-                                            height: '1px',
-                                            background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent)',
-                                            marginTop: '40px'
-                                        }}></div>
-                                    )}
                                 </div>
                             </div>
                         ))}
                     </div>
+                    
+                    <style>{`
+                        @keyframes fadeInUp {
+                            from {
+                                opacity: 0;
+                                transform: translateY(15px);
+                            }
+                            to {
+                                opacity: 1;
+                                transform: translateY(0);
+                            }
+                        }
+                        
+                        @media (max-width: 768px) {
+                            .features-compact-grid {
+                                grid-template-columns: 1fr !important;
+                            }
+                        }
+                    `}</style>
                 </div>
-                
-                <style>{`
-                    @keyframes fadeInUp {
-                        from {
-                            opacity: 0;
-                            transform: translateY(20px);
-                        }
-                        to {
-                            opacity: 1;
-                            transform: translateY(0);
-                        }
-                    }
-                `}</style>
             </section>
 
             {/* Use Cases Section */}
