@@ -267,7 +267,7 @@ const HomePage: React.FC = () => {
                             fontFamily: 'Georgia, serif'
                         }}>
                             <p style={{ marginBottom: '25px' }}>
-                                Welcome to my digital workshop—a place where curiosity leads and perfection takes a backseat to discovery. 
+                                Welcome to my digital workshop, a place where curiosity leads and perfection takes a backseat to discovery. 
                                 Ever Explorations is my personal playground for ideas that won't sit still.
                             </p>
                             
@@ -296,9 +296,9 @@ const HomePage: React.FC = () => {
                             }}>
                                 <p style={{ marginBottom: '15px' }}>Ever exploring,</p>
                                 <p className="signature-name" style={{
-                                    fontSize: '1.8rem',
-                                    fontFamily: 'Brush Script MT, cursive',
-                                    fontWeight: '400',
+                                    fontSize: '1.4rem',
+                                    fontFamily: 'DM Sans, sans-serif',
+                                    fontWeight: '500',
                                     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
