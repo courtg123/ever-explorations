@@ -235,7 +235,7 @@ const HomePage: React.FC = () => {
                         padding: '60px 50px',
                         background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01))',
                         borderRadius: '20px',
-                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        border: '1px solid rgba(255, 255, 255, 0.05)',
                         boxShadow: '0 20px 80px rgba(0, 0, 0, 0.3)',
                         position: 'relative',
                         overflow: 'hidden'
@@ -250,7 +250,6 @@ const HomePage: React.FC = () => {
                             borderRadius: '50%',
                             filter: 'blur(60px)'
                         }}></div>
-                        
                         <h2 className="section-title" style={{
                             fontSize: '2.5rem',
                             marginBottom: '40px',
@@ -290,11 +289,12 @@ const HomePage: React.FC = () => {
                             
                             <div className="signature" style={{
                                 marginTop: '50px',
+                                textAlign: 'right',
                                 fontStyle: 'italic',
                                 fontSize: '1.1rem',
                                 color: 'rgba(255, 255, 255, 0.9)'
                             }}>
-                                <p style={{ marginBottom: '15px' }}>Ever exploring,</p>
+                                <p style={{ marginBottom: '10px' }}>Ever exploring,</p>
                                 <p className="signature-name" style={{
                                     fontSize: '1.4rem',
                                     fontFamily: 'DM Sans, sans-serif',
@@ -302,8 +302,7 @@ const HomePage: React.FC = () => {
                                     background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                                     WebkitBackgroundClip: 'text',
                                     WebkitTextFillColor: 'transparent',
-                                    backgroundClip: 'text',
-                                    marginLeft: '40px'
+                                    backgroundClip: 'text'
                                 }}>Courtney</p>
                             </div>
                         </div>
