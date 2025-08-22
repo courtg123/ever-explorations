@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import '../../css/e1-parallax.css';
 import EmailCaptureModal from './EmailCaptureModal';
 import { 
     ArrowLeft, 
@@ -31,7 +32,6 @@ import {
 const E1ProjectPage: React.FC = () => {
     const [scrolled, setScrolled] = useState(false);
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [currentScreenshot, setCurrentScreenshot] = useState(0);
     const location = useLocation();
 
     const screenshots = [
@@ -73,12 +73,41 @@ const E1ProjectPage: React.FC = () => {
     }, [location]);
 
     useEffect(() => {
-
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
+            
+            // Parallax effect for screenshots
+            const screenshots = document.querySelectorAll('.screenshot-parallax');
+            screenshots.forEach((screenshot: Element) => {
+                const rect = screenshot.getBoundingClientRect();
+                const speed = parseFloat(screenshot.getAttribute('data-speed') || '0.5');
+                const yPos = -(window.scrollY * speed);
+                const isLeft = screenshot.classList.contains('left');
+                const rotation = isLeft ? 15 : -15;
+                
+                // Calculate zoom based on viewport position
+                const viewportCenter = window.innerHeight / 2;
+                const elementCenter = rect.top + rect.height / 2;
+                const distance = Math.abs(viewportCenter - elementCenter);
+                const maxDistance = window.innerHeight;
+                const scale = 0.95 + (1 - Math.min(distance / maxDistance, 1)) * 0.15;
+                
+                // Calculate tilt based on scroll position
+                const tilt = rotation + (window.scrollY * 0.01);
+                
+                // Apply transform
+                (screenshot as HTMLElement).style.transform = 
+                    `translateY(${yPos}px) perspective(1000px) rotateY(${tilt}deg) scale(${scale})`;
+                
+                // Add in-view class for initial animation
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    screenshot.classList.add('in-view');
+                }
+            });
         };
 
         window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial call
 
         // Mouse move handler for comet trail
         const handleMouseMove = (e: MouseEvent) => {
@@ -121,22 +150,6 @@ const E1ProjectPage: React.FC = () => {
         };
     }, []);
 
-    // Auto-rotate screenshots
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentScreenshot((prev) => (prev + 1) % screenshots.length);
-        }, 5000); // Change every 5 seconds
-
-        return () => clearInterval(interval);
-    }, [screenshots.length]);
-
-    const nextScreenshot = () => {
-        setCurrentScreenshot((prev) => (prev + 1) % screenshots.length);
-    };
-
-    const prevScreenshot = () => {
-        setCurrentScreenshot((prev) => (prev - 1 + screenshots.length) % screenshots.length);
-    };
 
     const features = [
         {
@@ -266,58 +279,27 @@ const E1ProjectPage: React.FC = () => {
                 </div>
             </section>
 
-            {/* Screenshots Section */}
-            <section className="content-section">
-                <div className="content-container">
-                    <div className="section-header">
-                        <h2 className="section-title">See it in Action</h2>
-                        <p className="section-subtitle">Experience the power of infinite workspaces</p>
-                    </div>
-                    
-                    <div className="screenshot-carousel">
-                        <div className="carousel-main">
-                            <button 
-                                className="carousel-control carousel-control-prev"
-                                onClick={prevScreenshot}
-                                aria-label="Previous screenshot"
-                            >
-                                <ChevronLeft size={32} />
-                            </button>
-                            
-                            <div className="carousel-content">
-                                <div className="carousel-image-container">
-                                    <img 
-                                        src={screenshots[currentScreenshot].src} 
-                                        alt={screenshots[currentScreenshot].title}
-                                        className="carousel-image"
-                                    />
-                                </div>
-                                <div className="carousel-description">
-                                    <h3 className="carousel-title">{screenshots[currentScreenshot].title}</h3>
-                                    <p className="carousel-text">{screenshots[currentScreenshot].description}</p>
-                                </div>
-                            </div>
-                            
-                            <button 
-                                className="carousel-control carousel-control-next"
-                                onClick={nextScreenshot}
-                                aria-label="Next screenshot"
-                            >
-                                <ChevronRight size={32} />
-                            </button>
-                        </div>
-                        
-                        <div className="carousel-indicators">
-                            {screenshots.map((_, index) => (
-                                <button
-                                    key={index}
-                                    className={`carousel-indicator ${index === currentScreenshot ? 'active' : ''}`}
-                                    onClick={() => setCurrentScreenshot(index)}
-                                    aria-label={`Go to screenshot ${index + 1}`}
-                                />
-                            ))}
-                        </div>
-                    </div>
+            {/* Screenshots Section with Parallax */}
+            <section className="screenshots-parallax-section">
+                <div className="parallax-content">
+                    <h2>See it in Action</h2>
+                    <p>Experience the power of infinite workspaces</p>
+                </div>
+                
+                <div className="screenshot-parallax screenshot-1 left" data-speed="0.3">
+                    <img src="/images/screenshots/e1-infinite-canvas_cropped.png" alt="e.1 Infinite Canvas" />
+                </div>
+                
+                <div className="screenshot-parallax screenshot-2 right" data-speed="0.5">
+                    <img src="/images/screenshots/e1-main-editor_cropped.png" alt="e.1 Main Editor Interface" />
+                </div>
+                
+                <div className="screenshot-parallax screenshot-3 left" data-speed="0.4">
+                    <img src="/images/screenshots/e1-magic-windows_cropped.png" alt="e.1 Magic Windows" />
+                </div>
+                
+                <div className="screenshot-parallax screenshot-4 right" data-speed="0.6">
+                    <img src="/images/screenshots/e1-multi-tab_cropped.png" alt="e.1 Multi-tab Interface" />
                 </div>
             </section>
 
