@@ -302,9 +302,9 @@ const ChangelogPage: React.FC = () => {
             <footer className="main-footer">
                 <div className="footer-container">
                     <div className="footer-content">
-                        <p>&copy; 2024 Ever Explorations. Built with curiosity.</p>
+                        <p>&copy; 2025 Ever Explorations. Built with curiosity.</p>
                         <div className="footer-links">
-                            <Link to="/project/e1">Back to e.1</Link>
+                            <Link to="/project/e1">&nbsp;&nbsp;Back to e.1</Link>
                         </div>
                     </div>
                 </div>

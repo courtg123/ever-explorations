@@ -572,9 +572,9 @@ const E1ProjectPage: React.FC = () => {
                 </div>
                 <div className="footer-container">
                     <div className="footer-content">
-                        <p>&copy; 2024 Ever Explorations. Built with curiosity.</p>
+                        <p>&copy; 2025 Ever Explorations. Built with curiosity.</p>
                         <div className="footer-links">
-                            <Link to="/">Back to Home</Link>
+                            <Link to="/">&nbsp;&nbsp;Back to Home</Link>
                         </div>
                     </div>
                 </div>

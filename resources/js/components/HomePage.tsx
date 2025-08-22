@@ -226,46 +226,87 @@ const HomePage: React.FC = () => {
                 </div>
             </section>
 
-            {/* About Section */}
+            {/* About Section - Letter Style */}
             <section id="about" className="content-section">
                 <div className="content-container">
-                    <div className="section-header">
-                        <h2 className="section-title">About This Space</h2>
-                    </div>
-                    <div className="message-grid">
-                        <div className="message-card">
-                            <h3>Welcome Explorer</h3>
-                            <p>
-                                Welcome to my digital workshop—a place where curiosity leads and perfection takes a backseat to discovery.
+                    <div className="letter-container" style={{
+                        maxWidth: '800px',
+                        margin: '0 auto',
+                        padding: '60px 50px',
+                        background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01))',
+                        borderRadius: '20px',
+                        border: '1px solid rgba(255, 255, 255, 0.1)',
+                        boxShadow: '0 20px 80px rgba(0, 0, 0, 0.3)',
+                        position: 'relative',
+                        overflow: 'hidden'
+                    }}>
+                        <div style={{
+                            position: 'absolute',
+                            top: '-100px',
+                            right: '-100px',
+                            width: '300px',
+                            height: '300px',
+                            background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent)',
+                            borderRadius: '50%',
+                            filter: 'blur(60px)'
+                        }}></div>
+                        
+                        <h2 className="section-title" style={{
+                            fontSize: '2.5rem',
+                            marginBottom: '40px',
+                            textAlign: 'left',
+                            fontFamily: 'Georgia, serif',
+                            fontWeight: '400',
+                            letterSpacing: '-0.5px'
+                        }}>Dear Fellow Explorer,</h2>
+                        
+                        <div className="letter-body" style={{
+                            fontSize: '1.15rem',
+                            lineHeight: '1.8',
+                            color: 'rgba(255, 255, 255, 0.85)',
+                            fontFamily: 'Georgia, serif'
+                        }}>
+                            <p style={{ marginBottom: '25px' }}>
+                                Welcome to my digital workshop—a place where curiosity leads and perfection takes a backseat to discovery. 
                                 Ever Explorations is my personal playground for ideas that won't sit still.
                             </p>
-                        </div>
-                        <div className="message-card">
-                            <h3>The Journey</h3>
-                            <p>
-                                Nothing here is ever truly finished, because the joy is in the journey of building, breaking, and rebuilding.
+                            
+                            <p style={{ marginBottom: '25px' }}>
+                                Nothing here is ever truly finished, because the joy is in the journey of building, breaking, and rebuilding. 
                                 I'm a tinkerer at heart. I love getting lost in code, chasing down weird bugs, and staying up too late because 
                                 I just need to see if something works.
                             </p>
-                        </div>
-                        <div className="message-card">
-                            <h3>Beta Forever</h3>
-                            <p>
+                            
+                            <p style={{ marginBottom: '25px' }}>
                                 Every project here is perpetually in beta, constantly evolving as I learn something new. That's the beauty of it. 
                                 There's no pressure to ship a polished product, just the freedom to experiment and the excitement of sharing 
                                 discoveries along the way.
                             </p>
+                            
+                            <p style={{ marginBottom: '40px' }}>
+                                Whether you're a fellow explorer or just curious about what I'm up to, I hope you'll find something here that 
+                                sparks your own sense of wonder. The best discoveries often come from simply asking, "I wonder what would happen if..."
+                            </p>
+                            
+                            <div className="signature" style={{
+                                marginTop: '50px',
+                                fontStyle: 'italic',
+                                fontSize: '1.1rem',
+                                color: 'rgba(255, 255, 255, 0.9)'
+                            }}>
+                                <p style={{ marginBottom: '15px' }}>Ever exploring,</p>
+                                <p className="signature-name" style={{
+                                    fontSize: '1.8rem',
+                                    fontFamily: 'Brush Script MT, cursive',
+                                    fontWeight: '400',
+                                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                                    WebkitBackgroundClip: 'text',
+                                    WebkitTextFillColor: 'transparent',
+                                    backgroundClip: 'text',
+                                    marginLeft: '40px'
+                                }}>Courtney</p>
+                            </div>
                         </div>
-                    </div>
-                    <div className="signature-section">
-                        <p className="signature-text">
-                            Whether you're a fellow explorer or just curious about what I'm up to, I hope you'll find something here that 
-                            sparks your own sense of wonder. The best discoveries often come from simply asking, "I wonder what would happen if..."
-                        </p>
-                        <p className="signature">
-                            Ever exploring,<br />
-                            <span className="signature-name">Courtney</span>
-                        </p>
                     </div>
                 </div>
             </section>
@@ -393,7 +434,7 @@ const HomePage: React.FC = () => {
                 </div>
                 <div className="footer-container">
                     <div className="footer-content">
-                        <p>&copy; 2024 Ever Explorations. Built with curiosity.</p>
+                        <p>&copy; 2025 Ever Explorations. Built with curiosity.</p>
                     </div>
                 </div>
             </footer>
