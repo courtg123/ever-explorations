@@ -1,33 +1,34 @@
-/* Mobile Header Styles for All Pages */
+/* Mobile Header Styles - Always Single Line */
 
 @media (max-width: 768px) {
-    /* Main header adjustments */
+    /* Force single line layout */
     .main-header {
-        padding: 15px 20px !important;
+        padding: 10px 15px !important;
         min-height: auto;
     }
     
     .nav-container {
-        flex-direction: column;
-        gap: 12px;
+        flex-direction: row !important;
+        justify-content: space-between;
         align-items: center;
+        gap: 10px;
     }
     
     .nav-brand {
-        width: 100%;
-        text-align: center;
+        flex-shrink: 0;
     }
     
     .brand-text {
-        font-size: 1.3rem !important;
-        display: block;
+        font-size: 1rem !important;
+        white-space: nowrap;
     }
     
     .nav-menu {
-        width: 100%;
-        justify-content: center;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
         gap: 8px !important;
-        font-size: 0.85rem;
+        font-size: 0.75rem;
         margin: 0;
         padding: 0;
         flex-wrap: nowrap;
@@ -39,89 +40,53 @@
     }
     
     .nav-menu a {
-        padding: 6px 10px;
+        padding: 3px 6px;
         display: inline-block;
     }
     
     .nav-download-btn {
-        padding: 6px 10px !important;
-        font-size: 0.85rem !important;
-    }
-}
-
-@media (max-width: 640px) {
-    /* Hide less essential items on smaller screens */
-    .nav-menu li:nth-child(2) { /* Hide Features */
-        display: none;
+        padding: 3px 6px !important;
+        font-size: 0.75rem !important;
+        white-space: nowrap;
     }
     
-    .nav-menu li:nth-child(3) { /* Hide Changelog */
+    /* Hide Features and Changelog on mobile to save space */
+    .nav-menu li:nth-child(2),
+    .nav-menu li:nth-child(3) {
         display: none;
-    }
-    
-    .nav-menu {
-        gap: 15px !important;
     }
 }
 
 @media (max-width: 480px) {
-    /* Very small screens - minimal navigation */
-    .main-header {
-        padding: 12px 15px !important;
-    }
-    
-    .nav-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    
-    .nav-brand {
-        width: auto;
-        text-align: left;
-    }
-    
+    /* Even smaller screens */
     .brand-text {
-        font-size: 1.1rem !important;
+        font-size: 0.9rem !important;
     }
     
-    /* Show only critical nav items */
     .nav-menu {
-        width: auto;
-        gap: 10px !important;
+        font-size: 0.7rem !important;
+        gap: 5px !important;
     }
     
-    .nav-menu li:nth-child(1) { /* Home */
-        display: block;
-    }
-    
-    .nav-menu li:nth-child(4) { /* Coming Soon button */
-        display: block;
-    }
-    
-    /* Make text even smaller */
     .nav-menu a,
     .nav-download-btn {
-        font-size: 0.8rem !important;
-        padding: 5px 8px !important;
+        font-size: 0.7rem !important;
+        padding: 2px 5px !important;
     }
 }
 
 @media (max-width: 380px) {
-    /* Ultra small screens */
+    /* Ultra small - show only brand and one item */
     .brand-text {
-        font-size: 1rem !important;
+        font-size: 0.85rem !important;
     }
     
-    /* Hide everything except brand */
-    .nav-menu {
-        display: none !important;
+    /* Hide all but Coming Soon */
+    .nav-menu li:nth-child(1) {
+        display: none;
     }
     
-    /* Add menu icon */
-    .nav-container::after {
-        content: "☰";
-        font-size: 1.4rem;
-        color: rgba(255, 255, 255, 0.8);
-        padding: 5px;
+    .nav-download-btn {
+        font-size: 0.65rem !important;
     }
 }
