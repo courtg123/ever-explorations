@@ -635,6 +635,11 @@ const E1ProjectPage: React.FC = () => {
                         <div className="footer-links">
                             <Link to="/">&nbsp;&nbsp;Back to Home</Link>
                         </div>
+                        <div className="footer-links" style={{ marginTop: '10px', fontSize: '0.9rem' }}>
+                            <Link to="/privacy" style={{ margin: '0 10px', opacity: 0.7 }}>Privacy Policy</Link>
+                            <span style={{ opacity: 0.5 }}>•</span>
+                            <Link to="/terms" style={{ margin: '0 10px', opacity: 0.7 }}>Terms of Service</Link>
+                        </div>
                     </div>
                 </div>
             </footer>

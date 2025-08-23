@@ -257,7 +257,7 @@ const HomePage: React.FC = () => {
                             fontFamily: 'Georgia, serif',
                             fontWeight: '400',
                             letterSpacing: '-0.5px'
-                        }}>Dear Fellow Explorer,</h2>
+                        }}>Fellow Explorer,</h2>
                         
                         <div className="letter-body" style={{
                             fontSize: '1.15rem',
@@ -433,6 +433,11 @@ const HomePage: React.FC = () => {
                 <div className="footer-container">
                     <div className="footer-content">
                         <p>&copy; 2025 Ever Explorations. Built with curiosity.</p>
+                        <div className="footer-links" style={{ marginTop: '15px', fontSize: '0.9rem' }}>
+                            <Link to="/privacy" style={{ margin: '0 10px', opacity: 0.7 }}>Privacy Policy</Link>
+                            <span style={{ opacity: 0.5 }}>•</span>
+                            <Link to="/terms" style={{ margin: '0 10px', opacity: 0.7 }}>Terms of Service</Link>
+                        </div>
                     </div>
                 </div>
             </footer>
