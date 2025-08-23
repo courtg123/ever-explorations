@@ -173,26 +173,78 @@
 
 @media (max-width: 768px) {
     .screenshots-parallax-section {
+        padding: 60px 0;
+        overflow: visible;
+    }
+    
+    .screenshot-stage {
         min-height: auto;
-        padding: 50px 0;
+        margin-bottom: 60px;
+        padding: 0;
+    }
+    
+    .screenshot-parallax-container {
+        position: relative;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        flex-direction: column !important;
+        gap: 20px;
+        padding: 0 20px;
     }
     
     .screenshot-parallax {
-        position: relative;
-        width: 90%;
-        max-width: none;
-        left: auto !important;
-        right: auto !important;
-        top: auto !important;
-        margin: 30px auto;
         transform: none !important;
+        opacity: 1 !important;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.3));
+    }
+    
+    .screenshot-parallax img {
+        border-radius: 12px;
+    }
+    
+    .screenshot-description {
+        text-align: left !important;
+        padding: 20px 0;
+        opacity: 1 !important;
+        transform: none !important;
+        display: block !important;
+    }
+    
+    .screenshot-description h3 {
+        font-size: 1.5rem;
+    }
+    
+    .screenshot-description p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .parallax-content {
+        padding: 0 20px;
+        margin-bottom: 40px;
     }
     
     .parallax-content h2 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     
     .parallax-content p {
         font-size: 1rem;
+    }
+    
+    /* Remove all parallax animations on mobile */
+    .screenshot-parallax-container.in-focus,
+    .screenshot-parallax-container.passed,
+    .screenshot-parallax-container.coming {
+        transform: none !important;
+    }
+    
+    .screenshot-parallax-container.in-focus .screenshot-parallax,
+    .screenshot-parallax-container.passed .screenshot-parallax,
+    .screenshot-parallax-container.coming .screenshot-parallax {
+        transform: none !important;
+        opacity: 1 !important;
     }
 }

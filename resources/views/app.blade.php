@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ever Explorations - Digital Workshop</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/planetsicon.png">
+    <link rel="apple-touch-icon" href="/images/planetsicon.png">
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-1N4CQKCK9H"></script>
     <script>
@@ -22,6 +26,7 @@
     
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/modern-styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/mobile-header.css') }}">
     @viteReactRefresh
     @vite(['resources/css/app.css', 'resources/js/app.tsx'])
 </head>

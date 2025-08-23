@@ -1,0 +1,213 @@
+/* Mobile styles for E1 Project Page */
+
+@media (max-width: 768px) {
+    /* Hero Section */
+    .hero-section.project-hero {
+        padding: 80px 20px 60px;
+    }
+    
+    .hero-content {
+        flex-direction: column !important;
+        text-align: center;
+    }
+    
+    .hero-text {
+        max-width: 100% !important;
+    }
+    
+    .hero-title {
+        font-size: 2.5rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem !important;
+    }
+    
+    .hero-description {
+        font-size: 1rem !important;
+        padding: 0 10px;
+    }
+    
+    .hero-visual {
+        margin-top: 30px;
+        max-width: 250px;
+    }
+    
+    .back-button {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    /* Features Section */
+    .features-compact-grid {
+        padding: 20px 15px !important;
+    }
+    
+    /* Use Cases */
+    .use-cases-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 20px;
+    }
+    
+    /* Download Section */
+    .download-grid {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+        padding: 0 20px;
+    }
+    
+    .download-card {
+        padding: 30px 20px !important;
+    }
+    
+    /* Technical Specs */
+    .specs-card {
+        padding: 20px !important;
+        margin: 0 20px;
+    }
+    
+    .spec-row {
+        flex-direction: column;
+        align-items: flex-start !important;
+        gap: 10px;
+    }
+    
+    .spec-label {
+        width: 100% !important;
+    }
+    
+    /* Navigation */
+    .main-header {
+        padding: 15px 20px !important;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-brand {
+        text-align: center;
+    }
+    
+    .brand-text {
+        font-size: 1.2rem !important;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        gap: 10px !important;
+        font-size: 0.85rem;
+        flex-wrap: wrap;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+    }
+    
+    .nav-menu a,
+    .nav-download-btn {
+        padding: 5px 10px;
+    }
+    
+    /* Section Headers */
+    .section-header {
+        padding: 0 20px;
+    }
+    
+    .section-title {
+        font-size: 2rem !important;
+    }
+    
+    .section-subtitle {
+        font-size: 1rem !important;
+    }
+    
+    /* Content Container */
+    .content-container {
+        padding: 0 !important;
+    }
+    
+    /* Project Badges */
+    .project-badges-row {
+        justify-content: center;
+        gap: 10px;
+    }
+    
+    .status-badge {
+        font-size: 0.8rem !important;
+        padding: 4px 10px !important;
+    }
+    
+    /* Buttons */
+    .btn {
+        font-size: 0.95rem !important;
+        padding: 10px 20px !important;
+    }
+    
+    .hero-actions {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        padding: 0 20px;
+    }
+    
+    .hero-actions .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: 2rem !important;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.1rem !important;
+    }
+    
+    .section-title {
+        font-size: 1.75rem !important;
+    }
+    
+    /* Simplify navigation for very small screens */
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .nav-brand {
+        text-align: left;
+    }
+    
+    .brand-text {
+        font-size: 1.1rem !important;
+    }
+    
+    .nav-menu {
+        display: none !important;
+    }
+    
+    /* Add a simple "Menu" text that could be made interactive later */
+    .nav-container::after {
+        content: "☰";
+        font-size: 1.5rem;
+        color: rgba(255, 255, 255, 0.8);
+        cursor: pointer;
+    }
+}
+
+/* Alternative: Just show essential nav items on small screens */
+@media (max-width: 640px) {
+    .nav-menu li:nth-child(2),
+    .nav-menu li:nth-child(3) {
+        display: none;
+    }
+    
+    .nav-menu {
+        gap: 20px !important;
+    }
+}

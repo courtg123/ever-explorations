@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import '../../css/e1-parallax.css';
+import '../../css/e1-mobile.css';
 import EmailCaptureModal from './EmailCaptureModal';
 import { 
     ArrowLeft, 
@@ -76,42 +77,45 @@ const E1ProjectPage: React.FC = () => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
             
-            // Staged parallax effect for screenshot containers
-            const stages = document.querySelectorAll('.screenshot-stage');
-            stages.forEach((stage: Element) => {
-                const container = stage.querySelector('.screenshot-parallax-container') as HTMLElement;
-                const description = stage.querySelector('.screenshot-description') as HTMLElement;
-                if (!container) return;
-                
-                const rect = stage.getBoundingClientRect();
-                const stageCenter = rect.top + rect.height / 2;
-                const viewportCenter = window.innerHeight / 2;
-                const distance = stageCenter - viewportCenter;
-                
-                // Remove all state classes
-                container.classList.remove('in-focus', 'passed', 'coming');
-                
-                // Determine state based on position
-                if (Math.abs(distance) < window.innerHeight * 0.3) {
-                    // This screenshot is in focus
-                    container.classList.add('in-focus');
-                    if (description) {
-                        description.classList.add('visible');
+            // Only apply parallax effects on desktop
+            if (window.innerWidth > 768) {
+                // Staged parallax effect for screenshot containers
+                const stages = document.querySelectorAll('.screenshot-stage');
+                stages.forEach((stage: Element) => {
+                    const container = stage.querySelector('.screenshot-parallax-container') as HTMLElement;
+                    const description = stage.querySelector('.screenshot-description') as HTMLElement;
+                    if (!container) return;
+                    
+                    const rect = stage.getBoundingClientRect();
+                    const stageCenter = rect.top + rect.height / 2;
+                    const viewportCenter = window.innerHeight / 2;
+                    const distance = stageCenter - viewportCenter;
+                    
+                    // Remove all state classes
+                    container.classList.remove('in-focus', 'passed', 'coming');
+                    
+                    // Determine state based on position
+                    if (Math.abs(distance) < window.innerHeight * 0.3) {
+                        // This screenshot is in focus
+                        container.classList.add('in-focus');
+                        if (description) {
+                            description.classList.add('visible');
+                        }
+                    } else if (distance < 0) {
+                        // This screenshot has been passed
+                        container.classList.add('passed');
+                        if (description) {
+                            description.classList.remove('visible');
+                        }
+                    } else {
+                        // This screenshot is coming up
+                        container.classList.add('coming');
+                        if (description) {
+                            description.classList.remove('visible');
+                        }
                     }
-                } else if (distance < 0) {
-                    // This screenshot has been passed
-                    container.classList.add('passed');
-                    if (description) {
-                        description.classList.remove('visible');
-                    }
-                } else {
-                    // This screenshot is coming up
-                    container.classList.add('coming');
-                    if (description) {
-                        description.classList.remove('visible');
-                    }
-                }
-            });
+                });
+            }
         };
 
         window.addEventListener('scroll', handleScroll);

@@ -1,0 +1,127 @@
+/* Mobile Header Styles for All Pages */
+
+@media (max-width: 768px) {
+    /* Main header adjustments */
+    .main-header {
+        padding: 15px 20px !important;
+        min-height: auto;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
+    }
+    
+    .nav-brand {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .brand-text {
+        font-size: 1.3rem !important;
+        display: block;
+    }
+    
+    .nav-menu {
+        width: 100%;
+        justify-content: center;
+        gap: 8px !important;
+        font-size: 0.85rem;
+        margin: 0;
+        padding: 0;
+        flex-wrap: nowrap;
+    }
+    
+    .nav-menu li {
+        margin: 0;
+        white-space: nowrap;
+    }
+    
+    .nav-menu a {
+        padding: 6px 10px;
+        display: inline-block;
+    }
+    
+    .nav-download-btn {
+        padding: 6px 10px !important;
+        font-size: 0.85rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Hide less essential items on smaller screens */
+    .nav-menu li:nth-child(2) { /* Hide Features */
+        display: none;
+    }
+    
+    .nav-menu li:nth-child(3) { /* Hide Changelog */
+        display: none;
+    }
+    
+    .nav-menu {
+        gap: 15px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Very small screens - minimal navigation */
+    .main-header {
+        padding: 12px 15px !important;
+    }
+    
+    .nav-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    
+    .nav-brand {
+        width: auto;
+        text-align: left;
+    }
+    
+    .brand-text {
+        font-size: 1.1rem !important;
+    }
+    
+    /* Show only critical nav items */
+    .nav-menu {
+        width: auto;
+        gap: 10px !important;
+    }
+    
+    .nav-menu li:nth-child(1) { /* Home */
+        display: block;
+    }
+    
+    .nav-menu li:nth-child(4) { /* Coming Soon button */
+        display: block;
+    }
+    
+    /* Make text even smaller */
+    .nav-menu a,
+    .nav-download-btn {
+        font-size: 0.8rem !important;
+        padding: 5px 8px !important;
+    }
+}
+
+@media (max-width: 380px) {
+    /* Ultra small screens */
+    .brand-text {
+        font-size: 1rem !important;
+    }
+    
+    /* Hide everything except brand */
+    .nav-menu {
+        display: none !important;
+    }
+    
+    /* Add menu icon */
+    .nav-container::after {
+        content: "☰";
+        font-size: 1.4rem;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 5px;
+    }
+}
