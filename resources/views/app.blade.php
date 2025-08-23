@@ -5,6 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ever Explorations</title>
     
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:title" content="Ever Explorations">
+    <meta property="og:description" content="A digital workshop where curiosity leads. Home of Ever e.1, the infinite digital workspace.">
+    <meta property="og:image" content="{{ url('/images/screenshots/e1-infinite-canvas_cropped.png') }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Ever Explorations">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Ever Explorations">
+    <meta name="twitter:description" content="A digital workshop where curiosity leads. Home of Ever e.1, the infinite digital workspace.">
+    <meta name="twitter:image" content="{{ url('/images/screenshots/e1-infinite-canvas_cropped.png') }}">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="description" content="A digital workshop where curiosity leads. Home of Ever e.1, the infinite digital workspace.">
+    
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/planetsicon.png">
     <link rel="apple-touch-icon" href="/images/planetsicon.png">

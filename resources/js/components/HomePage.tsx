@@ -266,25 +266,24 @@ const HomePage: React.FC = () => {
                             fontFamily: 'Georgia, serif'
                         }}>
                             <p style={{ marginBottom: '25px' }}>
-                                Welcome to my digital workshop, a place where curiosity leads and perfection takes a backseat to discovery. 
+                                Welcome to my digital workshop, a place where curiosity leads. 
                                 Ever Explorations is my personal playground for ideas that won't sit still.
                             </p>
                             
                             <p style={{ marginBottom: '25px' }}>
                                 Nothing here is ever truly finished, because the joy is in the journey of building, breaking, and rebuilding. 
-                                I'm a tinkerer at heart. I love getting lost in code, chasing down weird bugs, and staying up too late because 
-                                I just need to see if something works.
+                                I'm a tinkerer at heart, I love to explore and experiment, and that's what this space is for.
                             </p>
                             
                             <p style={{ marginBottom: '25px' }}>
-                                Every project here is perpetually in beta, constantly evolving as I learn something new. That's the beauty of it. 
-                                There's no pressure to ship a polished product, just the freedom to experiment and the excitement of sharing 
+                                Every project here is perpetually in beta, constantly evolving as I learn something new. 
+                                Enjoying some of the freedom to experiment and the excitement of sharing 
                                 discoveries along the way.
                             </p>
                             
                             <p style={{ marginBottom: '40px' }}>
                                 Whether you're a fellow explorer or just curious about what I'm up to, I hope you'll find something here that 
-                                sparks your own sense of wonder. The best discoveries often come from simply asking, "I wonder what would happen if..."
+                                peaks your interest.
                             </p>
                             
                             <div className="signature" style={{

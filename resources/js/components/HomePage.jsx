@@ -114,26 +114,20 @@ function HomePage() {
                     <div className="transmission" style={{animationDelay: '0.6s'}}>
                         <div className="transmission-header">message decode</div>
                         <p className="exploration-text">
-                            Welcome to my digital workshop—a place where curiosity leads and perfection takes a backseat to discovery.
+                            Welcome to my digital workshop, a place where curiosity leads. 
+                            Ever Explorations is my personal playground for ideas that won't sit still.
                         </p>
                         <p className="exploration-text">
-                            Ever Explorations is my personal playground for ideas that won't sit still. Here, you'll find coding experiments 
-                            that started as "what if?" questions, AI projects born from late-night wonderings, and various technical 
-                            adventures that caught my imagination.
+                            Nothing here is ever truly finished, because the joy is in the journey of building, breaking, and rebuilding. 
+                            I'm a tinkerer at heart, I love to explore and experiment, and that's what this space is for.
                         </p>
                         <p className="exploration-text">
-                            Nothing here is ever truly finished, because the joy is in the journey of building, breaking, and rebuilding.
-                            I'm a tinkerer at heart. I love getting lost in code, chasing down weird bugs, and staying up too late because 
-                            I just need to see if something works.
-                        </p>
-                        <p className="exploration-text">
-                            Every project here is perpetually in beta, constantly evolving as I learn something new. That's the beauty of it. 
-                            There's no pressure to ship a polished product, just the freedom to experiment and the excitement of sharing 
-                            discoveries along the way.
+                            Every project here is perpetually in beta, constantly evolving as I learn something new. 
+                            Enjoying some of the freedom to experiment and the excitement of sharing discoveries along the way.
                         </p>
                         <p className="exploration-text">
                             Whether you're a fellow explorer or just curious about what I'm up to, I hope you'll find something here that 
-                            sparks your own sense of wonder. The best discoveries often come from simply asking, "I wonder what would happen if..."
+                            peaks your interest.
                         </p>
                         <p className="signature">
                             Ever exploring,<br />
