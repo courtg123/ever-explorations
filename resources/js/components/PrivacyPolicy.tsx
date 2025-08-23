@@ -101,8 +101,13 @@ const PrivacyPolicy: React.FC = () => {
             {/* Footer */}
             <footer className="main-footer">
                 <div className="footer-container">
-                    <div className="footer-content">
-                        <p>&copy; 2025 Ever Explorations. Built with curiosity.</p>
+                    <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <p style={{ margin: 0 }}>&copy; 2025 Ever Explorations. Built with curiosity.</p>
+                        <div className="footer-links" style={{ fontSize: '0.9rem', display: 'flex', alignItems: 'center' }}>
+                            <Link to="/">Home</Link>
+                            <span style={{ margin: '0 15px', opacity: 0.5 }}>•</span>
+                            <Link to="/terms" style={{ opacity: 0.7 }}>Terms of Service</Link>
+                        </div>
                     </div>
                 </div>
             </footer>

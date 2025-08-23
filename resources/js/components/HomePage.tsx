@@ -431,12 +431,12 @@ const HomePage: React.FC = () => {
                     <div className="starfield-static"></div>
                 </div>
                 <div className="footer-container">
-                    <div className="footer-content">
-                        <p>&copy; 2025 Ever Explorations. Built with curiosity.</p>
-                        <div className="footer-links" style={{ marginTop: '15px', fontSize: '0.9rem' }}>
-                            <Link to="/privacy" style={{ margin: '0 10px', opacity: 0.7 }}>Privacy Policy</Link>
-                            <span style={{ opacity: 0.5 }}>•</span>
-                            <Link to="/terms" style={{ margin: '0 10px', opacity: 0.7 }}>Terms of Service</Link>
+                    <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
+                        <p style={{ margin: 0 }}>&copy; 2025 Ever Explorations. Built with curiosity.</p>
+                        <div className="footer-links" style={{ fontSize: '0.9rem' }}>
+                            <Link to="/privacy" style={{ marginLeft: '20px', opacity: 0.7 }}>Privacy Policy</Link>
+                            <span style={{ margin: '0 10px', opacity: 0.5 }}>•</span>
+                            <Link to="/terms" style={{ opacity: 0.7 }}>Terms of Service</Link>
                         </div>
                     </div>
                 </div>
