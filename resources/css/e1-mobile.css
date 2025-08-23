@@ -70,10 +70,18 @@
     .spec-row {
         flex-direction: column;
         align-items: flex-start !important;
-        gap: 10px;
+        gap: 8px;
+        text-align: left !important;
     }
     
     .spec-label {
+        width: 100% !important;
+        justify-content: flex-start !important;
+        text-align: left !important;
+    }
+    
+    .spec-value {
+        text-align: left !important;
         width: 100% !important;
     }
     
