@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Footer from './Footer';
 import { 
     ArrowLeft, 
     Sparkles, 
@@ -299,20 +300,7 @@ const ChangelogPage: React.FC = () => {
             </section>
 
             {/* Footer */}
-            <footer className="main-footer">
-                <div className="footer-container">
-                    <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-                        <p style={{ margin: 0 }}>&copy; 2025 Ever Explorations. Built with curiosity.</p>
-                        <div className="footer-links" style={{ fontSize: '0.9rem', display: 'flex', alignItems: 'center' }}>
-                            <Link to="/project/e1">Back to e.1</Link>
-                            <span style={{ margin: '0 15px', opacity: 0.5 }}>•</span>
-                            <Link to="/privacy" style={{ opacity: 0.7 }}>Privacy Policy</Link>
-                            <span style={{ margin: '0 10px', opacity: 0.5 }}>•</span>
-                            <Link to="/terms" style={{ opacity: 0.7 }}>Terms of Service</Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer backLink={{ to: '/project/e1', text: 'Back to e.1' }} />
         </>
     );
 };

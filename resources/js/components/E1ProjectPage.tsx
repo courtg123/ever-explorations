@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import '../../css/e1-parallax.css';
 import '../../css/e1-mobile.css';
 import EmailCaptureModal from './EmailCaptureModal';
+import Footer from './Footer';
 import { 
     ArrowLeft, 
     Code2, 
@@ -294,7 +295,7 @@ const E1ProjectPage: React.FC = () => {
             {/* Screenshots Section with Staged Parallax */}
             <section className="screenshots-parallax-section">
                 <div className="parallax-content">
-                    <h2>Reimagine Your Workflow</h2>
+                    <h2 className="section-title">Reimagine Your Workflow</h2>
                     <p>Everything you need in one infinite, intelligent workspace</p>
                 </div>
                 
@@ -304,7 +305,7 @@ const E1ProjectPage: React.FC = () => {
                             <img src="/images/screenshots/e1-infinite-canvas_cropped.png" alt="e.1 Infinite Canvas" />
                         </div>
                         <div className="screenshot-description">
-                            <h3>Infinite Canvas</h3>
+                            <h3 className="section-title" style={{ fontSize: '28px' }}>Infinite Canvas</h3>
                             <p>Spread your work across unlimited workspaces. Like having infinite tables where you can pick up, work on, and place back any piece of your project.</p>
                         </div>
                     </div>
@@ -316,7 +317,7 @@ const E1ProjectPage: React.FC = () => {
                             <img src="/images/screenshots/e1-magic-windows_cropped.png" alt="e.1 Magic Windows" />
                         </div>
                         <div className="screenshot-description">
-                            <h3>Magic Windows</h3>
+                            <h3 className="section-title" style={{ fontSize: '28px' }}>Magic Windows</h3>
                             <p>Create mini apps and widgets for your projects. Custom tools and utilities that live right in your workspace.</p>
                         </div>
                     </div>
@@ -328,7 +329,7 @@ const E1ProjectPage: React.FC = () => {
                             <img src="/images/screenshots/e1-main-editor_cropped.png" alt="e.1 Advanced Code Editor" />
                         </div>
                         <div className="screenshot-description">
-                            <h3>Advanced Code Editing</h3>
+                            <h3 className="section-title" style={{ fontSize: '28px' }}>Advanced Code Editing</h3>
                             <p>Full IDE capabilities with Monaco Editor at its core, featuring IntelliSense, syntax highlighting, and multi-file editing.</p>
                         </div>
                     </div>
@@ -340,7 +341,7 @@ const E1ProjectPage: React.FC = () => {
                             <img src="/images/screenshots/e1-multi-tab_cropped.png" alt="e.1 Multi-tab Interface" />
                         </div>
                         <div className="screenshot-description">
-                            <h3>Persistent Sessions</h3>
+                            <h3 className="section-title" style={{ fontSize: '28px' }}>Persistent Sessions</h3>
                             <p>Switch contexts without losing anything. Every workspace maintains its state, letting you return exactly where you left off.</p>
                         </div>
                     </div>
@@ -352,7 +353,7 @@ const E1ProjectPage: React.FC = () => {
                             <img src="/images/screenshots/e1-integrated-browser_cropped.png" alt="e.1 Integrated Browser" />
                         </div>
                         <div className="screenshot-description">
-                            <h3>Integrated Browser</h3>
+                            <h3 className="section-title" style={{ fontSize: '28px' }}>Integrated Browser</h3>
                             <p>Browse the web without leaving your workspace. Keep reference materials, documentation, and research right alongside your work.</p>
                         </div>
                     </div>
@@ -558,7 +559,7 @@ const E1ProjectPage: React.FC = () => {
                         marginTop: '3rem', 
                         padding: '2rem', 
                         textAlign: 'center',
-                        background: 'linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(167, 139, 250, 0.05))'
+                        background: 'rgba(255, 255, 255, 0.03)'
                     }}>
                         <h3 style={{ marginBottom: '1rem' }}>Be the First to Know</h3>
                         <p style={{ marginBottom: '1.5rem', opacity: 0.9 }}>
@@ -569,8 +570,6 @@ const E1ProjectPage: React.FC = () => {
                             to="/#contact"
                             className="btn btn-primary"
                             style={{ 
-                                background: 'linear-gradient(135deg, #8b5cf6, #a78bfa)',
-                                border: 'none',
                                 display: 'inline-flex',
                                 alignItems: 'center',
                                 textDecoration: 'none'
@@ -624,24 +623,7 @@ const E1ProjectPage: React.FC = () => {
             </section>
 
             {/* Footer */}
-            <footer className="main-footer">
-                {/* Subtle starfield for footer */}
-                <div className="starfield-container">
-                    <div className="starfield-static"></div>
-                </div>
-                <div className="footer-container">
-                    <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-                        <p style={{ margin: 0 }}>&copy; 2025 Ever Explorations. Built with curiosity.</p>
-                        <div className="footer-links" style={{ fontSize: '0.9rem', display: 'flex', alignItems: 'center' }}>
-                            <Link to="/">Back to Home</Link>
-                            <span style={{ margin: '0 15px', opacity: 0.5 }}>•</span>
-                            <Link to="/privacy" style={{ opacity: 0.7 }}>Privacy Policy</Link>
-                            <span style={{ margin: '0 10px', opacity: 0.5 }}>•</span>
-                            <Link to="/terms" style={{ opacity: 0.7 }}>Terms of Service</Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer showStarfield={true} backLink={{ to: '/', text: 'Back to Home' }} />
 
             <EmailCaptureModal
                 isOpen={isModalOpen}

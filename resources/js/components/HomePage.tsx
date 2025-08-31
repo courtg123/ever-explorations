@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { Project } from '../types';
+import Footer from './Footer';
 
 const HomePage: React.FC = () => {
     const [projects, setProjects] = useState<Project[]>([]);
@@ -246,7 +247,7 @@ const HomePage: React.FC = () => {
                             right: '-100px',
                             width: '300px',
                             height: '300px',
-                            background: 'radial-gradient(circle, rgba(139, 92, 246, 0.1), transparent)',
+                            background: 'radial-gradient(circle, rgba(255, 255, 255, 0.05), transparent)',
                             borderRadius: '50%',
                             filter: 'blur(60px)'
                         }}></div>
@@ -298,10 +299,7 @@ const HomePage: React.FC = () => {
                                     fontSize: '1.4rem',
                                     fontFamily: 'DM Sans, sans-serif',
                                     fontWeight: '500',
-                                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                                    WebkitBackgroundClip: 'text',
-                                    WebkitTextFillColor: 'transparent',
-                                    backgroundClip: 'text'
+                                    color: 'rgba(255, 255, 255, 0.9)'
                                 }}>Courtney</p>
                             </div>
                         </div>
@@ -425,22 +423,7 @@ const HomePage: React.FC = () => {
             </section>
 
             {/* Footer */}
-            <footer className="main-footer">
-                {/* Subtle starfield for footer */}
-                <div className="starfield-container">
-                    <div className="starfield-static"></div>
-                </div>
-                <div className="footer-container">
-                    <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-                        <p style={{ margin: 0 }}>&copy; 2025 Ever Explorations. Built with curiosity.</p>
-                        <div className="footer-links" style={{ fontSize: '0.9rem' }}>
-                            <Link to="/privacy" style={{ marginLeft: '20px', opacity: 0.7 }}>Privacy Policy</Link>
-                            <span style={{ margin: '0 10px', opacity: 0.5 }}>•</span>
-                            <Link to="/terms" style={{ opacity: 0.7 }}>Terms of Service</Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer showStarfield={true} />
         </>
     );
 };

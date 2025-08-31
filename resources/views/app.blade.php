@@ -8,10 +8,12 @@
     <!-- Open Graph / Social Media Meta Tags -->
     <meta property="og:title" content="Ever Explorations">
     <meta property="og:description" content="A digital workshop where curiosity leads. Home of Ever e.1, the infinite digital workspace.">
-    <meta property="og:image" content="{{ url('/images/screenshots/e1-infinite-canvas_cropped.png') }}">
+    <meta property="og:image" content="{{ request()->getSchemeAndHttpHost() }}/images/screenshots/e1-infinite-canvas_cropped.png">
+    <meta property="og:image:secure_url" content="{{ request()->getSchemeAndHttpHost() }}/images/screenshots/e1-infinite-canvas_cropped.png">
+    <meta property="og:image:type" content="image/png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:url" content="{{ request()->getSchemeAndHttpHost() }}">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Ever Explorations">
     
@@ -19,7 +21,7 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Ever Explorations">
     <meta name="twitter:description" content="A digital workshop where curiosity leads. Home of Ever e.1, the infinite digital workspace.">
-    <meta name="twitter:image" content="{{ url('/images/screenshots/e1-infinite-canvas_cropped.png') }}">
+    <meta name="twitter:image" content="{{ request()->getSchemeAndHttpHost() }}/images/screenshots/e1-infinite-canvas_cropped.png">
     
     <!-- Additional SEO Meta Tags -->
     <meta name="description" content="A digital workshop where curiosity leads. Home of Ever e.1, the infinite digital workspace.">

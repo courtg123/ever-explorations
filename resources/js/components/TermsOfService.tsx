@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
+import Footer from './Footer';
 
 const TermsOfService: React.FC = () => {
     useEffect(() => {
@@ -129,18 +130,7 @@ const TermsOfService: React.FC = () => {
             </section>
 
             {/* Footer */}
-            <footer className="main-footer">
-                <div className="footer-container">
-                    <div className="footer-content" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap' }}>
-                        <p style={{ margin: 0 }}>&copy; 2025 Ever Explorations. Built with curiosity.</p>
-                        <div className="footer-links" style={{ fontSize: '0.9rem', display: 'flex', alignItems: 'center' }}>
-                            <Link to="/">Home</Link>
-                            <span style={{ margin: '0 15px', opacity: 0.5 }}>•</span>
-                            <Link to="/privacy" style={{ opacity: 0.7 }}>Privacy Policy</Link>
-                        </div>
-                    </div>
-                </div>
-            </footer>
+            <Footer />
         </>
     );
 };

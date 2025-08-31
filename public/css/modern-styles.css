@@ -147,8 +147,8 @@ body {
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
-    box-shadow: 0 0 6px var(--cosmic-purple),
-                0 0 12px rgba(155, 136, 255, 0.6);
+    box-shadow: 0 0 6px rgba(155, 136, 255, 0.2),
+                0 0 12px rgba(155, 136, 255, 0.15);
     animation: comet-fade 1s ease-out forwards;
 }
 
@@ -240,7 +240,8 @@ body {
 }
 
 .nav-download-btn {
-    background: var(--cosmic-purple);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white !important;
     padding: 8px 20px !important;
     border-radius: 20px;
@@ -248,9 +249,10 @@ body {
 }
 
 .nav-download-btn:hover {
-    background: linear-gradient(135deg, var(--cosmic-purple), var(--nebula-pink));
+    background: rgba(155, 136, 255, 0.15);
+    border-color: rgba(155, 136, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(155, 136, 255, 0.3);
+    box-shadow: 0 5px 20px rgba(155, 136, 255, 0.08);
 }
 
 /* Hero Section */
@@ -309,7 +311,7 @@ body {
     background: rgba(155, 136, 255, 0.15);
     border-color: rgba(155, 136, 255, 0.5);
     transform: translateY(-2px);
-    box-shadow: 0 5px 20px rgba(155, 136, 255, 0.2);
+    box-shadow: 0 5px 20px rgba(155, 136, 255, 0.1);
 }
 
 .announcement-badge {
@@ -349,17 +351,21 @@ body {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--cosmic-purple), var(--nebula-pink));
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     color: white;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(155, 136, 255, 0.4);
+    background: rgba(155, 136, 255, 0.15);
+    border-color: rgba(155, 136, 255, 0.3);
+    box-shadow: 0 10px 30px rgba(155, 136, 255, 0.15);
 }
 
 .btn-purple {
-    background: var(--cosmic-purple);
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
     white-space: nowrap;
     display: inline-flex;
     align-items: center;
@@ -367,9 +373,10 @@ body {
 }
 
 .btn-purple:hover {
-    background: linear-gradient(135deg, var(--cosmic-purple), var(--nebula-pink));
+    background: rgba(155, 136, 255, 0.15);
+    border-color: rgba(155, 136, 255, 0.3);
     transform: translateY(-2px);
-    box-shadow: 0 10px 30px rgba(155, 136, 255, 0.5);
+    box-shadow: 0 10px 30px rgba(155, 136, 255, 0.15);
 }
 
 .btn-secondary {
@@ -379,8 +386,9 @@ body {
 }
 
 .btn-secondary:hover {
-    border-color: var(--cosmic-purple);
-    color: var(--cosmic-purple);
+    border-color: rgba(155, 136, 255, 0.3);
+    color: rgba(155, 136, 255, 0.5);
+    background: rgba(155, 136, 255, 0.05);
 }
 
 .hero-visual {
@@ -400,7 +408,7 @@ body {
     transform: translate(-50%, -50%);
     width: 120%;
     height: 120%;
-    background: radial-gradient(circle, rgba(155, 136, 255, 0.2) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 0%, transparent 70%);
     pointer-events: none;
 }
 
@@ -425,7 +433,7 @@ body {
     font-size: 48px;
     font-weight: normal;
     margin-bottom: 15px;
-    background: linear-gradient(90deg, var(--text-primary), var(--cosmic-purple));
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--cosmic-purple) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -474,9 +482,9 @@ body {
 }
 
 .message-card:hover {
-    border-color: rgba(155, 136, 255, 0.3);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
-    box-shadow: 0 12px 40px rgba(155, 136, 255, 0.15),
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2),
                 inset 0 2px 0 rgba(255, 255, 255, 0.1);
     background: rgba(255, 255, 255, 0.04);
 }
@@ -556,7 +564,7 @@ body {
 }
 
 .project-card {
-    background: rgba(26, 26, 46, 0.5);
+    background: rgba(255, 255, 255, 0.03);
     border: 1px solid var(--border-color);
     border-radius: 12px;
     padding: 30px;
@@ -567,9 +575,9 @@ body {
 }
 
 .project-card:hover {
-    border-color: var(--cosmic-purple);
+    border-color: rgba(255, 255, 255, 0.2);
     transform: translateY(-5px);
-    box-shadow: 0 10px 40px rgba(155, 136, 255, 0.2);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
 .project-card-header {
@@ -614,9 +622,9 @@ body {
 }
 
 .badge-experimental {
-    background: rgba(155, 136, 255, 0.2);
-    color: var(--cosmic-purple);
-    border: 1px solid rgba(155, 136, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .project-description {
@@ -632,10 +640,15 @@ body {
 }
 
 .project-link {
-    color: var(--cosmic-purple);
+    color: var(--text-secondary);
     font-size: 14px;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.project-card:hover .project-link {
+    color: var(--text-primary);
 }
 
 /* Empty State */
@@ -719,9 +732,9 @@ body {
 }
 
 .badge-version {
-    background: rgba(155, 136, 255, 0.2);
-    color: var(--cosmic-purple);
-    border: 1px solid rgba(155, 136, 255, 0.3);
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .project-logo {
@@ -761,8 +774,8 @@ body {
 
 .glass-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(155, 136, 255, 0.3);
-    box-shadow: 0 12px 40px rgba(155, 136, 255, 0.15),
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2),
                 inset 0 2px 0 rgba(255, 255, 255, 0.1);
 }
 
@@ -791,7 +804,7 @@ body {
 }
 
 .feature-icon {
-    color: var(--cosmic-purple);
+    color: var(--text-secondary);
     width: 32px;
     height: 32px;
 }
@@ -820,11 +833,11 @@ body {
 }
 
 .platform-icon {
-    color: var(--cosmic-purple);
+    color: var(--text-secondary);
 }
 
 .version-info {
-    color: var(--cosmic-purple);
+    color: var(--text-secondary);
     font-size: 14px;
     margin-bottom: 10px;
 }
@@ -871,8 +884,12 @@ body {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: var(--cosmic-purple);
+    color: var(--text-primary);
     font-weight: 500;
+}
+
+.spec-label svg {
+    color: var(--text-secondary);
 }
 
 .spec-value {
@@ -964,7 +981,7 @@ body {
 
 .screenshot-item:hover img {
     transform: translateY(-5px);
-    box-shadow: 0 15px 50px rgba(155, 136, 255, 0.2);
+    box-shadow: 0 15px 50px rgba(155, 136, 255, 0.1);
 }
 
 .screenshot-caption {
@@ -1038,8 +1055,8 @@ body {
 .contact-card h3 {
     font-family: 'Forum', serif;
     font-size: 28px;
-    color: var(--text-primary);
     margin-bottom: 15px;
+    color: var(--text-primary);
 }
 
 .mailing-list-card p,
@@ -1080,7 +1097,7 @@ body {
     outline: none;
     border-color: var(--cosmic-purple);
     background: rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 20px rgba(155, 136, 255, 0.2);
+    box-shadow: 0 0 20px rgba(155, 136, 255, 0.1);
 }
 
 .contact-form {
@@ -1531,4 +1548,22 @@ body {
     .carousel-title {
         font-size: 1.25rem;
     }
+}
+/* Removed duplicate CSS - headers now use section-title class directly */
+
+/* Keep only feature/use-case card titles white (not main section titles) */
+.feature-card h3,
+.use-case-card h3 {
+    color: var(--text-primary) !important;
+    background: none !important;
+    -webkit-text-fill-color: unset !important;
+}
+
+/* Force gradient on parallax headers */
+.parallax-content h2.section-title,
+.screenshot-description h3.section-title {
+    background: linear-gradient(135deg, var(--text-primary) 0%, var(--cosmic-purple) 100%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    background-clip: text !important;
 }
