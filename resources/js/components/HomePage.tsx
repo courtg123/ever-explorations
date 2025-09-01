@@ -319,19 +319,21 @@ const HomePage: React.FC = () => {
                         <div className="projects-grid">
                             {projects.map(project => (
                                 <Link to="/project/e1" key={project.id} className="project-card-link">
-                                    <div className="project-card">
+                                    <div className="project-card project-card-horizontal">
                                         <div className="project-screenshot">
-                                            <img src="/images/screenshots/e1-infinite-canvas_cropped.png" alt="e.1 Infinite Canvas" />
+                                            <img src="/images/screenshots/e1-main.png" alt="Ever e.1" />
                                         </div>
-                                        <div className="project-card-header">
-                                            <h3 className="project-name">{project.name}</h3>
-                                            <span className={`project-badge badge-${project.status}`}>
-                                                {project.status}
-                                            </span>
-                                        </div>
-                                        <p className="project-description">{project.description}</p>
-                                        <div className="project-footer">
-                                            <span className="project-link">View Project →</span>
+                                        <div className="project-card-content">
+                                            <div className="project-card-header">
+                                                <h3 className="project-name">{project.name}</h3>
+                                                <span className={`project-badge badge-${project.status}`}>
+                                                    {project.status}
+                                                </span>
+                                            </div>
+                                            <p className="project-description">{project.description}</p>
+                                            <div className="project-footer">
+                                                <span className="project-link">View Project →</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </Link>

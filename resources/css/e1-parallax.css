@@ -37,9 +37,11 @@
 .screenshot-parallax img {
     width: 100%;
     height: auto;
-    border-radius: 20px;
+    border-radius: 8px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     object-fit: cover;
+    background: #000;
+    padding: 20px;
 }
 
 .screenshot-description {
@@ -201,7 +203,9 @@
     }
     
     .screenshot-parallax img {
-        border-radius: 12px;
+        border-radius: 8px;
+        background: #000;
+        padding: 15px;
     }
     
     .screenshot-description {

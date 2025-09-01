@@ -9,3 +9,26 @@
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }
+
+/* Horizontal Project Card Styles */
+.project-card.project-card-horizontal {
+    flex-direction: row !important;
+    gap: 30px !important;
+    align-items: center !important;
+    padding: 30px !important;
+}
+
+.project-card.project-card-horizontal .project-screenshot {
+    flex: 0 0 450px !important;
+    width: 450px !important;
+    height: 280px !important;
+    margin-bottom: 0 !important;
+    border-radius: 8px !important;
+}
+
+.project-card.project-card-horizontal .project-card-content {
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+}

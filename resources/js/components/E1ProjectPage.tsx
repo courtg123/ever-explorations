@@ -284,7 +284,7 @@ const E1ProjectPage: React.FC = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="hero-visual">
+                        <div className="hero-visual" style={{ maxWidth: '400px', margin: '0 auto' }}>
                             <img src="/images/e1-planets.png" alt="Ever e.1" className="hero-image project-logo" />
                             <div className="hero-glow"></div>
                         </div>
@@ -302,7 +302,7 @@ const E1ProjectPage: React.FC = () => {
                 <div className="screenshot-stage">
                     <div className="screenshot-parallax-container left coming">
                         <div className="screenshot-parallax">
-                            <img src="/images/screenshots/e1-infinite-canvas_cropped.png" alt="e.1 Infinite Canvas" />
+                            <img src="/images/screenshots/e1-infinite-canvas.gif" alt="e.1 Infinite Canvas" />
                         </div>
                         <div className="screenshot-description">
                             <h3 className="section-title" style={{ fontSize: '28px' }}>Infinite Canvas</h3>
@@ -314,7 +314,7 @@ const E1ProjectPage: React.FC = () => {
                 <div className="screenshot-stage">
                     <div className="screenshot-parallax-container right coming">
                         <div className="screenshot-parallax">
-                            <img src="/images/screenshots/e1-magic-windows_cropped.png" alt="e.1 Magic Windows" />
+                            <img src="/images/screenshots/e1-magic-windows.gif" alt="e.1 Magic Windows" />
                         </div>
                         <div className="screenshot-description">
                             <h3 className="section-title" style={{ fontSize: '28px' }}>Magic Windows</h3>
@@ -326,7 +326,7 @@ const E1ProjectPage: React.FC = () => {
                 <div className="screenshot-stage">
                     <div className="screenshot-parallax-container left coming">
                         <div className="screenshot-parallax">
-                            <img src="/images/screenshots/e1-main-editor_cropped.png" alt="e.1 Advanced Code Editor" />
+                            <img src="/images/screenshots/e1-main-editor.gif" alt="e.1 Advanced Code Editor" />
                         </div>
                         <div className="screenshot-description">
                             <h3 className="section-title" style={{ fontSize: '28px' }}>Advanced Code Editing</h3>
@@ -338,7 +338,7 @@ const E1ProjectPage: React.FC = () => {
                 <div className="screenshot-stage">
                     <div className="screenshot-parallax-container right coming">
                         <div className="screenshot-parallax">
-                            <img src="/images/screenshots/e1-multi-tab_cropped.png" alt="e.1 Multi-tab Interface" />
+                            <img src="/images/screenshots/e1-persistent-sessions.gif" alt="e.1 Multi-tab Interface" />
                         </div>
                         <div className="screenshot-description">
                             <h3 className="section-title" style={{ fontSize: '28px' }}>Persistent Sessions</h3>
@@ -350,7 +350,7 @@ const E1ProjectPage: React.FC = () => {
                 <div className="screenshot-stage">
                     <div className="screenshot-parallax-container left coming">
                         <div className="screenshot-parallax">
-                            <img src="/images/screenshots/e1-integrated-browser_cropped.png" alt="e.1 Integrated Browser" />
+                            <img src="/images/screenshots/e1-integrated-browser.gif" alt="e.1 Integrated Browser" />
                         </div>
                         <div className="screenshot-description">
                             <h3 className="section-title" style={{ fontSize: '28px' }}>Integrated Browser</h3>
