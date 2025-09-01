@@ -39,7 +39,7 @@ body {
     background-image: url('../images/starrybg.png');
     background-size: cover;
     background-position: center;
-    opacity: 0.5;
+    opacity: 0.35;
     animation: drift 400s linear infinite;
 }
 

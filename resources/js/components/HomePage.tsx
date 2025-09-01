@@ -219,7 +219,7 @@ const HomePage: React.FC = () => {
                                 </button>
                             </div>
                         </div>
-                        <div className="hero-visual">
+                        <div className="hero-visual" style={{ maxWidth: '350px', margin: '0 auto' }}>
                             <img src="/images/explore.png" alt="Explorer Diagram" className="hero-image" />
                             <div className="hero-glow"></div>
                         </div>

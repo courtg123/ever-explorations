@@ -45,7 +45,7 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    opacity: 0.6;
+    opacity: 0.4;
 }
 
 /* Hero-specific starfield */
@@ -55,7 +55,7 @@ body {
 }
 
 .hero-section .starfield-container {
-    opacity: 1;
+    opacity: 0.6;
 }
 
 /* Gradient overlay for smooth transition */
@@ -83,7 +83,7 @@ body {
 
 /* Footer subtle starfield */
 .main-footer .starfield-container {
-    opacity: 0.3;
+    opacity: 0.25;
 }
 
 /* Content sections - clean background */
